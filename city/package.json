@@ -49,6 +49,7 @@
   "dependencies": {
     "babel-polyfill": "^6.26.0",
     "cesium": "^1.95.0",
+    "cesium-navigation-es6": "^3.0.8",
     "lodash-es": "^4.17.21"
   }
 }
