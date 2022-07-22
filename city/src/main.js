@@ -6,10 +6,15 @@ import '@/css/common.scss'
 
 import '@/js/initCesium.js'
 import initViewer from '@/js/initViewer.js'
+import setCamera from '@/js/setCamera.js'
 import MousePosition from '@/js/MousePosition.js'
+import modifyMap from '@/js/modifyMap.js'
 
 
 const viewer = initViewer()
+
+// 设置相机到广州塔
+setCamera(viewer)
 
 // 获取鼠标所在位置的经纬度
 new MousePosition(viewer)
@@ -26,7 +31,8 @@ new CesiumNavigation(viewer, {
     enableDistanceLegend: true
 })
 
-
+// 修改地图的底色
+modifyMap(viewer)
 
 
 

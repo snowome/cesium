@@ -1,6 +1,7 @@
 import * as Cesium from 'cesium'
 
 export default function initViewer() {
+
     const viewer = new Cesium.Viewer(document.body, {
         // 信息框 是否显示
         infoBox: false,
@@ -26,4 +27,5 @@ export default function initViewer() {
     viewer.cesiumWidget.creditContainer.style.display = 'none'
 
     return viewer
+
 }

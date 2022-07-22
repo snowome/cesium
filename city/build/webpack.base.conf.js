@@ -68,7 +68,7 @@ const generateConfig = env => {
             // new Webpack.ProvidePlugin({
             //     $: 'jquery'
             // }),
-            new HtmlWebpackPlugin(getHtmlConfig('index', 'cesium基础', env)),
+            new HtmlWebpackPlugin(getHtmlConfig('index', 'cesium城市', env)),
         ]
     }
 }
