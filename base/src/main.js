@@ -40,10 +40,18 @@ const viewer = new Cesium.Viewer(document.body, {
     timeline: false,
     // 全屏按钮 是否显示
     fullscreenButton: false,
+    // 天地图 https://www.tianditu.gov.cn/
+    imageryProvider: new Cesium.WebMapTileServiceImageryProvider({
+            // 矢量地图
+            url: "http://t0.tianditu.com/vec_w/wmts?service=wmts&request=GetTile&version=1.0.0&LAYER=vec&tileMatrixSet=w&TileMatrix={TileMatrix}&TileRow={TileRow}&TileCol={TileCol}&style=default&format=tiles&tk=30d07720fa76f07732d83c748bb84211",
+            // 影像地图
+        // url: "http://t0.tianditu.com/img_w/wmts?service=wmts&request=GetTile&version=1.0.0&LAYER=img&tileMatrixSet=w&TileMatrix={TileMatrix}&TileRow={TileRow}&TileCol={TileCol}&style=default&format=tiles&tk=30d07720fa76f07732d83c748bb84211",
+        layer: "tdtBasicLayer",
+        style: "default",
+        format: "image/jpeg",
+        tileMatrixSetID: "GoogleMapsCompatible",
+    }),
 })
 
 // 去掉左下角的logo
 viewer.cesiumWidget.creditContainer.style.display = 'none'
-
-
-
