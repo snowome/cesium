@@ -4,7 +4,7 @@ export default function initViewer() {
 
     const viewer = new Cesium.Viewer(document.body, {
         // 信息框 是否显示
-        infoBox: false,
+        // infoBox: true,
         // 搜索框 是否显示
         geocoder: false,
         // Home 是否显示
