@@ -33,7 +33,7 @@ new CesiumNavigation(viewer, {
 })
 
 // 修改地图的底色
-modifyMap(viewer)
+// modifyMap(viewer)
 
 // 修改建筑的颜色
 modifyBuild(viewer)
