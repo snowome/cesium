@@ -10,6 +10,7 @@ import setCamera from '@/js/setCamera.js'
 import MousePosition from '@/js/MousePosition.js'
 import modifyMap from '@/js/modifyMap.js'
 import modifyBuild from '@/js/modifyBuild.js'
+import LightCone from '@/js/lightCone.js'
 
 
 const viewer = initViewer()
@@ -33,7 +34,10 @@ new CesiumNavigation(viewer, {
 })
 
 // 修改地图的底色
-// modifyMap(viewer)
+modifyMap(viewer)
 
 // 修改建筑的颜色
 modifyBuild(viewer)
+
+// 添加动态的光锥
+new LightCone(viewer)

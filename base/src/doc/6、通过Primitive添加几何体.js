@@ -49,11 +49,27 @@ viewer.scene.primitives.add(primitive)
 
 
 // 动态修改图元颜色
-setInterval(() => {
-    const attribute = primitive.getGeometryInstanceAttributes('redRect')
-    attribute.color = Cesium.ColorGeometryInstanceAttribute.toValue(
-        Cesium.Color.fromRandom({
-            alpha: 0.5,
-        })
-    )
-}, 2000)
+// setInterval(() => {
+//     const attribute = primitive.getGeometryInstanceAttributes('redRect')
+//     attribute.color = Cesium.ColorGeometryInstanceAttribute.toValue(
+//         Cesium.Color.fromRandom({
+//             alpha: 0.5,
+//         })
+//     )
+// }, 2000)
+
+// 点击拾取
+const handler = new Cesium.ScreenSpaceEventHandler(viewer.scene.canvas)
+handler.setInputAction(event => {
+    const pickedObject = viewer.scene.pick(event.position)
+    if (Cesium.defined(pickedObject)) {
+        if (typeof pickedObject.id === 'string') {  // 排除entities的物体
+            const attribute = primitive.getGeometryInstanceAttributes(pickedObject.id)
+            attribute.color = Cesium.ColorGeometryInstanceAttribute.toValue(
+                Cesium.Color.fromRandom({
+                    alpha: 0.5,
+                })
+            )
+        }
+    }
+}, Cesium.ScreenSpaceEventType.LEFT_CLICK)

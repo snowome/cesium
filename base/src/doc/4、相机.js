@@ -23,7 +23,7 @@ const position = Cesium.Cartesian3.fromDegrees(116.393428, 39.90923, 1000)
 //     destination: position,
 //     // 指定相机视角
 //     orientation: {
-//         // 指定相机的朝向,偏航角
+//         // 指定相机的朝向,偏航角，绕Y轴旋转
 //         heading: Cesium.Math.toRadians(0),
 //         // 指定相机的俯仰角,0度是竖直向上,-90度是向下
 //         pitch: Cesium.Math.toRadians(-30),

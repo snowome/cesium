@@ -29,6 +29,78 @@ const point = viewer.entities.add({
     }
 })
 
+// 颜色材质
+// const material = new Cesium.ColorMaterialProperty(
+//     new Cesium.Color(1.0, 1.0, 0.0, 0.5)
+// )
+
+// 棋盘材质
+// const material = new Cesium.CheckerboardMaterialProperty({
+//     evenColor: Cesium.Color.WHITE,
+//     oddColor: Cesium.Color.BLACK,
+//     repeat: new Cesium.Cartesian2(4, 4),
+// })
+
+// 条纹材质
+// const material = new Cesium.StripeMaterialProperty({
+//     evenColor: Cesium.Color.RED,
+//     oddColor: Cesium.Color.BLUE,
+//     repeat: 16,
+// })
+
+// 网格材质
+const material = new Cesium.GridMaterialProperty({
+    color: Cesium.Color.RED,
+    cellAlpha: 0.2,
+    lineCount: new Cesium.Cartesian2(8, 8),
+    lineThickness: new Cesium.Cartesian2(2, 2),
+})
+
+// 创建一个矩形面
+const rectangle = viewer.entities.add({
+    id: "entityRect",
+    rectangle: {
+        coordinates: Cesium.Rectangle.fromDegrees(
+            // 西边的经度
+            90,
+            // 南边维度
+            20,
+            // 东边经度
+            110,
+            // 北边维度
+            30
+        ),
+        // material: Cesium.Color.RED.withAlpha(0.5),
+        material: material,
+    },
+})
+
+// 虚线材质
+// const polylineMaterial = new Cesium.PolylineDashMaterialProperty({
+//     dashLength: 15,
+//     color: Cesium.Color.SKYBLUE,
+// })
+
+// 箭头材质
+// const polylineMaterial = new Cesium.PolylineArrowMaterialProperty(Cesium.Color.SKYBLUE)
+
+// 发光飞线材质
+const polylineMaterial = new Cesium.PolylineGlowMaterialProperty({
+    glowPower: 0.8,     // 发光的程度
+    taperPower: 0.7,    // 线条是一个锥体，到哪里就可以收尾了，0.7就是70%
+    color: Cesium.Color.RED,
+})
+
+// 创建折线
+const polyline = viewer.entities.add({
+    polyline: {
+        positions: Cesium.Cartesian3.fromDegreesArray([90, 35, 125, 35]),
+        width: 20,
+        // material: Cesium.Color.BLUE,
+        material: polylineMaterial,
+    }
+})
+
 // 创建文字标签和广告牌
 const label =  viewer.entities.add({
     // 定位点

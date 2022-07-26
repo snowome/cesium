@@ -23,6 +23,14 @@ export default function initViewer() {
         fullscreenButton: false,
     })
 
+    // viewer.scene.globe.enableLighting = true
+    // 取消天空盒显示
+    // viewer.scene.skyBox.show = false
+    // 设置背景为黑色
+    // viewer.scene.backgroundColor = Cesium.Color.BLACK
+    // 设置抗锯齿
+    // viewer.scene.postProcessStages.fxaa.enabled = true
+
     // 去掉左下角的logo
     viewer.cesiumWidget.creditContainer.style.display = 'none'
 

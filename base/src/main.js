@@ -55,5 +55,3 @@ const viewer = new Cesium.Viewer(document.body, {
 
 // 去掉左下角的logo
 viewer.cesiumWidget.creditContainer.style.display = 'none'
-
-
