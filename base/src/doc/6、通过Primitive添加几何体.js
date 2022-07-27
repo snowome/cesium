@@ -19,7 +19,8 @@ const rectGeometry = new Cesium.RectangleGeometry({
     ),
     // 距离表面距离
     height: 0,
-    vertexFormat: Cesium.PerInstanceColorAppearance.VERTEX_FORMAT
+    // vertexFormat: Cesium.PerInstanceColorAppearance.VERTEX_FORMAT,
+    vertexFormat: Cesium.EllipsoidSurfaceAppearance.VERTEX_FORMAT,
 })
 
 // 第二步：创建几何体实例
@@ -34,9 +35,47 @@ const instance = new Cesium.GeometryInstance({
 })
 
 // 第三步：设置外观
-const appearance = new Cesium.PerInstanceColorAppearance({
-    flat: true
+// PerInstanceColorAppearance是使用instance的颜色去着色
+// const appearance = new Cesium.PerInstanceColorAppearance({
+//     flat: true
+// })
+
+// 颜色
+// const material = new Cesium.Material.fromType('Color', {
+//     color: Cesium.Color.SKYBLUE.withAlpha(0.5)
+// })
+// 图片
+// const material = new Cesium.Material.fromType('Image', {
+//     image: require('@/texture/logo.png'),
+//     repeat: new Cesium.Cartesian2(2, 2),
+// })
+// 漫反射贴图
+// const material = new Cesium.Material.fromType('DiffuseMap', {
+//     image: require('@/texture/logo.png'),
+// })
+// 网格
+// const material = new Cesium.Material.fromType('Grid', {
+//     color: Cesium.Color.RED,
+//     cellAlpha: 0.2,
+//     lineCount: new Cesium.Cartesian2(8, 8),
+//     lineThickness: new Cesium.Cartesian2(2, 2),
+// })
+// 水
+const material = new Cesium.Material.fromType('Water', {
+    baseWaterColor: new Cesium.Color.fromCssColorString('#1a507d'),
+    normalMap: './_assets/cesium/Assets/Textures/waterNormals.jpg',
 })
+
+// const appearance = new Cesium.MaterialAppearance({
+//     material: material
+// })
+
+// EllipsoidSurfaceAppearance 确定几何体都是与地球的椭球体平行，平行可以在计算大量顶点属性的时候节省内存。
+const appearance = new Cesium.EllipsoidSurfaceAppearance({
+    material: material
+})
+
+
 
 // 第四步：创建图元
 const primitive = new Cesium.Primitive({

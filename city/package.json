@@ -47,6 +47,7 @@
     "webpack-merge": "^5.7.3"
   },
   "dependencies": {
+    "@turf/turf": "^6.5.0",
     "babel-polyfill": "^6.26.0",
     "cesium": "^1.95.0",
     "cesium-navigation-es6": "^3.0.8",

@@ -11,6 +11,7 @@ import MousePosition from '@/js/MousePosition.js'
 import modifyMap from '@/js/modifyMap.js'
 import modifyBuild from '@/js/modifyBuild.js'
 import LightCone from '@/js/lightCone.js'
+import FlyLight from '@/js/FlyLight.js'
 
 
 const viewer = initViewer()
@@ -41,3 +42,6 @@ modifyBuild(viewer)
 
 // 添加动态的光锥
 new LightCone(viewer)
+
+// 上升流光飞线
+new FlyLight(viewer)
