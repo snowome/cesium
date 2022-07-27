@@ -83,8 +83,8 @@ Gsap.to(material.uniforms, {
 const appearance = new Cesium.EllipsoidSurfaceAppearance({
     material: material
 })
-// console.log(appearance._vertexShaderSource)
-// console.log(appearance._fragmentShaderSource)
+// console.log(appearance.vertexShaderSource)
+// console.log(appearance.fragmentShaderSource)
 
 
 // 第四步：创建图元
