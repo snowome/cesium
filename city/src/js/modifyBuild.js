@@ -31,7 +31,7 @@ function modifyBuild(viewer) {
                     // 获取模型position信息
                     vec4 position = czm_inverseModelView * vec4(v_positionEC, 1.0);
                     // 根据高度来设置渐变颜色
-                    float  strength = position.z / 200.0;
+                    float strength = position.z / 200.0;
                     gl_FragColor = vec4(strength, 0.3 * strength, strength, 1.0);
                     
                     if (position.z > 50.0) {

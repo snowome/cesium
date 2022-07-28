@@ -1,7 +1,8 @@
 import * as Cesium from 'cesium'
 
 class CustomMaterialPropery {
-    constructor() {
+    constructor(name) {
+        this.name = name
         this.definitionChanged = new Cesium.Event()
         Cesium.Material._materialCache.addMaterial("CustomMaterial", {
             fabric: {
@@ -32,6 +33,11 @@ class CustomMaterialPropery {
         })
     }
 
+    equals(other) {
+        // 判断两个材质是否相等
+        return other instanceof CustomMaterialPropery && this.name === other.name
+    }
+
     getType() {
         // 返回材质类型
         return "CustomMaterial";
@@ -49,7 +55,7 @@ class CustomMaterialPropery {
     }
 }
 
-const material = new CustomMaterialPropery()
+const material = new CustomMaterialPropery('CustomMaterial')
 
 const rectangle = viewer.entities.add({
     id: "entityRect",

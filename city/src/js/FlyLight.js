@@ -21,7 +21,7 @@ class FlyLight {
             // 根据点设置起始位置
             const start = Cesium.Cartesian3.fromDegrees(point[0], point[1], 0)
             // 根据点设置结束位置
-            const end = Cesium.Cartesian3.fromDegrees(point[0], point[1], 200 + Math.random() * 1000)
+            const end = Cesium.Cartesian3.fromDegrees(point[0], point[1], 200 + Math.random() * 3000)
             // 创建飞线材质
             const flyLightMaterial = new FlyLightMaterialProperty()
             // 创建线
