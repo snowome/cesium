@@ -31,7 +31,6 @@ const instance = new Cesium.GeometryInstance({
 })
 
 // 第三步：设置外观
-// EllipsoidSurfaceAppearance 确定几何体都是与地球的椭球体平行，平行可以在计算大量顶点属性的时候节省内存。
 const fragmentShaderDefault = `
 varying vec3 v_positionMC;
 varying vec3 v_positionEC;
@@ -66,7 +65,7 @@ void main() {
     #endif
 }
 `
-
+// EllipsoidSurfaceAppearance 确定几何体都是与地球的椭球体平行，平行可以在计算大量顶点属性的时候节省内存。
 const appearance = new Cesium.EllipsoidSurfaceAppearance({
     // uniforms 不在这里定义
     // uniforms: {
