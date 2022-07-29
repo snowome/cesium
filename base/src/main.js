@@ -41,6 +41,8 @@ const viewer = new Cesium.Viewer(document.body, {
     timeline: false,
     // 全屏按钮 是否显示
     fullscreenButton: false,
+    // 直接显示动画
+    shouldAnimate: true,
     // 天地图 https://www.tianditu.gov.cn/
     // imageryProvider: new Cesium.WebMapTileServiceImageryProvider({
     // 矢量地图
@@ -56,11 +58,3 @@ const viewer = new Cesium.Viewer(document.body, {
 
 // 去掉左下角的logo
 viewer.cesiumWidget.creditContainer.style.display = 'none'
-
-// const kmlURL = './_assets/kml/facilities.kml'
-const kmlURL = './_assets/kml/gdpPerCapita2008.kmz'
-
-const kmlData = Cesium.KmlDataSource.load(kmlURL)
-kmlData.then(d => {
-    viewer.dataSources.add(d)
-})

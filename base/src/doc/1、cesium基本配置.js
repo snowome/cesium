@@ -47,6 +47,8 @@ const viewer = new Cesium.Viewer(document.body, {
     timeline: false,
     // 全屏按钮 是否显示
     fullscreenButton: false,
+    // 直接显示动画
+    shouldAnimate: true,
     // 天空盒
     skyBox: new Cesium.SkyBox({
         sources: {
