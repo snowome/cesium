@@ -56,3 +56,11 @@ const viewer = new Cesium.Viewer(document.body, {
 
 // 去掉左下角的logo
 viewer.cesiumWidget.creditContainer.style.display = 'none'
+
+// const kmlURL = './_assets/kml/facilities.kml'
+const kmlURL = './_assets/kml/gdpPerCapita2008.kmz'
+
+const kmlData = Cesium.KmlDataSource.load(kmlURL)
+kmlData.then(d => {
+    viewer.dataSources.add(d)
+})
