@@ -7,10 +7,10 @@ class FlyLightMaterialProperty {
         this.color = color
         typeNum++
         this.definitionChanged = new Cesium.Event()
-
-        Cesium.Material._materialCache.addMaterial(`flyLightMaterial${typeNum}`, {
+        this.typeName = `flyLightMaterial${typeNum}`
+        Cesium.Material._materialCache.addMaterial(this.typeName, {
             fabric: {
-                type: `flyLightMaterial${typeNum}`,
+                type: this.typeName,
                 uniforms: {
                     uTime: 0,
                     color: this.color,
@@ -56,7 +56,7 @@ class FlyLightMaterialProperty {
         return other instanceof FlyLightMaterialProperty && this.color === other.color
     }
     getType() {
-        return `flyLightMaterial${typeNum}`
+        return this.typeName
     }
     getValue(time, result) {
         result.uTime = this.params.uTime

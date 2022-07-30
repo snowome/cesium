@@ -2,6 +2,9 @@ import * as Cesium from 'cesium'
 
 const position = Cesium.Cartesian3.fromDegrees(116.393428, 39.90923, 1000)
 
+// 相机追踪运动的问题
+// viewer.trackedEntity = planeEntity
+
 // 瞬间到达指定位置，视角
 // viewer.camera.setView({
 //     // 指定相机位置

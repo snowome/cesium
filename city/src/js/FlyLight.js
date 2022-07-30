@@ -7,8 +7,8 @@ class FlyLight {
     constructor(viewer) {
         // 设置巨型区域，2个点生成一个矩形
         this.bbox = [
-            113.2791, 23.144,
-            113.3591, 23.073,
+            113.2301, 23.1591,
+            113.4101, 23.0691,
         ]
         // 在bbox矩形范围内，随机生成300个点
         const points = Turf.randomPoint(300, {bbox: this.bbox})

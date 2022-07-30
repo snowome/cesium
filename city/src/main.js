@@ -12,6 +12,7 @@ import modifyMap from '@/js/modifyMap.js'
 import modifyBuild from '@/js/modifyBuild.js'
 import LightCone from '@/js/lightCone.js'
 import FlyLight from '@/js/FlyLight.js'
+import RoadLine from '@/js/RoadLine.js'
 
 
 const viewer = initViewer()
@@ -45,3 +46,6 @@ new LightCone(viewer)
 
 // 上升流光飞线
 new FlyLight(viewer)
+
+// 道路飞线
+new RoadLine(viewer)

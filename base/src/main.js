@@ -38,7 +38,7 @@ const viewer = new Cesium.Viewer(document.body, {
     // 左下角 动画控制 是否显示
     animation: false,
     // 底部 时间轴 是否显示
-    timeline: false,
+    timeline: true,
     // 全屏按钮 是否显示
     fullscreenButton: false,
     // 直接显示动画
@@ -58,3 +58,6 @@ const viewer = new Cesium.Viewer(document.body, {
 
 // 去掉左下角的logo
 viewer.cesiumWidget.creditContainer.style.display = 'none'
+
+
+
