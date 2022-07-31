@@ -24,7 +24,7 @@ Cesium.Camera.DEFAULT_VIEW_RECTANGLE = Cesium.Rectangle.fromDegrees(
 
 const viewer = new Cesium.Viewer(document.body, {
     // 信息框 是否显示
-    infoBox: false,
+    // infoBox: false,
     // 搜索框 是否显示
     geocoder: false,
     // Home 是否显示
@@ -58,6 +58,8 @@ const viewer = new Cesium.Viewer(document.body, {
 
 // 去掉左下角的logo
 viewer.cesiumWidget.creditContainer.style.display = 'none'
+
+
 
 
 

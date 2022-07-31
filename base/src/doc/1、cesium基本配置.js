@@ -73,3 +73,11 @@ viewer.cesiumWidget.creditContainer.style.display = 'none'
 // viewer.scene.backgroundColor = Cesium.Color.BLACK
 // 设置抗锯齿
 // viewer.scene.postProcessStages.fxaa.enabled = true
+
+// 设置沙箱允许使用js
+var iframe = document.getElementsByClassName("cesium-infoBox-iframe")[0];
+iframe.setAttribute(
+    "sandbox",
+    "allow-same-origin allow-scripts allow-popups allow-forms"
+);
+iframe.setAttribute("src", "");
