@@ -1,6 +1,7 @@
 import * as Cesium from 'cesium'
 import Gsap from 'gsap'
 
+// 从下往上的飞线
 let typeNum = 0
 class FlyLightMaterialProperty {
     constructor(color = new Cesium.Color(0.7, 0.6, 1.0, 1.0)) {
@@ -26,8 +27,7 @@ class FlyLightMaterialProperty {
                         float time = fract(czm_frameNumber / (60.0 * 10.0));
                         // 在0-1的基础上又加了10%
                         time = time * (1.0 + 0.1);
-                        // 平滑过渡函数
-                        // smoothstep(edge0, edge1, value);
+                        // 平滑过渡函数 smoothstep(edge0, edge1, value);
                         // edge0 = 8; edge1 = 10;
                         // 参数3：当前值,==7 , result = 0
                         // 参数3：当前值,==9 , result = 0.5

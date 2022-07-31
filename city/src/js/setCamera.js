@@ -6,9 +6,9 @@ function setCamera(viewer) {
     // 广州塔
     const position = Cesium.Cartesian3.fromDegrees(
         // 经度
-        113.3301,
+        113.35,
         // 纬度
-        23.0991,
+        23.09,
         // 高度
         1000
     )

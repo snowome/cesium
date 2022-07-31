@@ -1,6 +1,7 @@
 import * as Cesium from 'cesium'
 import Gsap from 'gsap'
 
+// 轨迹线效果
 class RoadLineMaterialProperty {
     constructor(name = 'roadline') {
         this.name = name

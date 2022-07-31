@@ -13,6 +13,7 @@ import modifyBuild from '@/js/modifyBuild.js'
 import LightCone from '@/js/lightCone.js'
 import FlyLight from '@/js/FlyLight.js'
 import RoadLine from '@/js/RoadLine.js'
+import RadarLight from '@/js/RadarLight.js'
 
 
 const viewer = initViewer()
@@ -49,3 +50,6 @@ new FlyLight(viewer)
 
 // 道路飞线
 new RoadLine(viewer)
+
+// 雷达
+new RadarLight(viewer)
