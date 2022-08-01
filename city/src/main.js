@@ -6,7 +6,7 @@ import '@/css/common.scss'
 
 import '@/js/initCesium.js'
 import initViewer from '@/js/initViewer.js'
-import setCamera from '@/js/setCamera.js'
+import camera from '@/js/camera.js'
 import MousePosition from '@/js/MousePosition.js'
 import modifyMap from '@/js/modifyMap.js'
 import modifyBuild from '@/js/modifyBuild.js'
@@ -14,12 +14,13 @@ import LightCone from '@/js/lightCone.js'
 import FlyLight from '@/js/FlyLight.js'
 import RoadLine from '@/js/RoadLine.js'
 import RadarLight from '@/js/RadarLight.js'
+import LightSpead from '@/js/LightSpead.js'
 
 
 const viewer = initViewer()
 
 // 设置相机到广州塔
-setCamera(viewer)
+camera(viewer)
 
 // 获取鼠标所在位置的经纬度
 new MousePosition(viewer)
@@ -53,3 +54,6 @@ new RoadLine(viewer)
 
 // 雷达
 new RadarLight(viewer)
+
+// 六边形光波扩散特效
+new LightSpead(viewer)

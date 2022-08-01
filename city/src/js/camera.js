@@ -1,7 +1,7 @@
 import * as Cesium from 'cesium'
 
 
-function setCamera(viewer) {
+function camera(viewer) {
 
     // 广州塔
     const position = Cesium.Cartesian3.fromDegrees(
@@ -31,5 +31,5 @@ function setCamera(viewer) {
 
 }
 
-export default setCamera
+export default camera
 
