@@ -7,3 +7,32 @@ body {
     overflow: hidden;
     display: flex;
 }
+
+// 右上角按钮组
+.cesium-viewer-toolbar {
+    display: none !important;
+}
+
+// 左下角动画控件
+.cesium-viewer-animationContainer {
+    display: none !important;
+}
+// 动画时间线
+.cesium-viewer-timelineContainer {
+    display: none !important;
+}
+
+// 影藏logo
+.cesium-viewer-bottom {
+    display: none !important;
+}
+.cesium-widget-credits {
+    display: none !important;
+}
+
+// 全屏按钮
+.cesium-viewer-fullscreenContainer {
+    display: none !important;
+    position: absolute;
+    top: 0;
+}

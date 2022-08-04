@@ -20,6 +20,7 @@ const config = {
     },
     devServer: {
         contentBase: 'dist',
+        // host: '192.168.1.100',
         port: 8080,
         open: false,
         overlay: true,                  // 在网页上也显示报错信息

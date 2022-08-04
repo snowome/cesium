@@ -15,6 +15,8 @@ import FlyLight from '@/js/FlyLight.js'
 import RoadLine from '@/js/RoadLine.js'
 import RadarLight from '@/js/RadarLight.js'
 import LightSpead from '@/js/LightSpead.js'
+import LightWall from '@/js/LightWall.js'
+import ParticleLight from '@/js/ParticleLight.js'
 
 
 const viewer = initViewer()
@@ -57,3 +59,11 @@ new RadarLight(viewer)
 
 // 六边形光波扩散特效
 new LightSpead(viewer)
+
+// 区域发光的墙
+new LightWall(viewer)
+
+// 烟花粒子
+new ParticleLight(viewer, Cesium.Color.RED)
+new ParticleLight(viewer, Cesium.Color.AQUA)
+new ParticleLight(viewer, Cesium.Color.GREEN)
