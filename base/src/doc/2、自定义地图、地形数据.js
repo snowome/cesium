@@ -44,6 +44,8 @@ const viewer = new Cesium.Viewer(document.body, {
 
 // 地图叠加
 // const imageLayers = viewer.imageryLayers
+// imageryLayers.remove(imageryLayers.get(0))       // 把默认加载的影响图层删除
+
 // const layers = imageLayers.addImageryProvider(
 //     new Cesium.UrlTemplateImageryProvider({
 //         url: "http://webrd02.is.autonavi.com/appmaptile?lang=zh_cn&size=1&scale=1&style=8&x={x}&y={y}&z={z}",

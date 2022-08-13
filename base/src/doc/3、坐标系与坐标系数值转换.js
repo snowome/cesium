@@ -25,3 +25,42 @@ const longitude = Cesium.Math.toDegrees(cartographic.longitude).toFixed(2)
 const latitude = Cesium.Math.toDegrees(cartographic.latitude).toFixed(2)
 const height = cartographic.height
 console.log(`经度：${longitude} 纬度：${latitude} `)
+
+// 屏幕坐标和 笛卡尔空间直角坐标系 互转
+class MousePosition {
+    constructor(viewer) {
+        this.divDom = document.createElement("div");
+        this.divDom.style.cssText = `
+            position: fixed;
+            bottom:0;
+            right:0;
+            width:200px;
+            height:40px;
+            background-color: rgba(0,0,0,0.5);
+            color: #fff;
+            font-size: 14px;
+            line-height: 40px;
+            text-align: center;
+            z-index: 100;
+        `;
+        document.body.appendChild(this.divDom);
+        // 监听塑标移动事件
+        const handler = new Cesium.ScreenSpaceEventHandler(viewer.scene.canvas)
+        handler.setInputAction(event => {
+            // 获取鼠标的坐标
+            const cartesian3 = viewer.camera.pickEllipsoid(event.endPosition, viewer.scene.globe.ellipsoid)
+            if (cartesian3) {
+                // 转换成经纬度
+                const cartographic = Cesium.Cartographic.fromCartesian(cartesian3)
+                const longitude = Cesium.Math.toDegrees(cartographic.longitude).toFixed(2)
+                const latitude = Cesium.Math.toDegrees(cartographic.latitude).toFixed(2)
+                const height = cartographic.height
+                this.divDom.innerHTML = `经度：${longitude} 纬度：${latitude} `;
+
+                // 笛卡尔空间直角坐标系 转为屏幕坐标
+                // const cartesian2 = Cesium.SceneTransforms.wgs84ToWindowCoordinates(viewer.scene, cartesian3)
+                // console.log('window position：', cartesian2)
+            }
+        }, Cesium.ScreenSpaceEventType.MOUSE_MOVE)
+    }
+}

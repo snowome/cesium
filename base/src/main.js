@@ -21,12 +21,7 @@ Cesium.Camera.DEFAULT_VIEW_RECTANGLE = Cesium.Rectangle.fromDegrees(
     // 北纬
     53.33,
 )
-window.screen.orientation
-    .lock("portrait")
-    .then(
-        success => console.log(success),
-        failure => console.log(failure)
-    )
+
 
 const viewer = new Cesium.Viewer(document.body, {
     // 信息框 是否显示
@@ -79,7 +74,6 @@ viewer.cesiumWidget.creditContainer.style.display = 'none'
 
 const position = Cesium.Cartesian3.fromDegrees(113.3191, 23.109, 600)
 
-
 // 瞬间到达指定位置，视角
 viewer.camera.setView({
     // 指定相机位置
@@ -94,3 +88,30 @@ viewer.camera.setView({
         roll: 0,
     }
 })
+
+
+var imageryLayers = viewer.imageryLayers;
+imageryLayers.remove(imageryLayers.get(0));
+//
+// var mapIds = [
+//     "mapbox.satellite",
+//     "mapbox.streets",
+//     "mapbox.streets-basic",
+//     "mapbox.light",
+//     "mapbox.streets-satellite",
+//     "mapbox.wheatpaste",
+//     "mapbox.comic",
+//     "mapbox.outdoors",
+//     "mapbox.run-bike-hike",
+//     "mapbox.pencil",
+//     "mapbox.pirates",
+//     "mapbox.emerald",
+//     "mapbox.high-contrast",
+// ];
+// imageryLayers.addImageryProvider(
+//     new Cesium.MapboxImageryProvider({
+//         mapId: mapIds[0],
+//         accessToken:
+//             "pk.eyJ1IjoibHM4NzAwNjEwMTEiLCJhIjoiY2tqYXZlZ2JrMDI5bTJzcDJmdDNteGhsNyJ9.0wTn4B1ce9Q4U5GnPso5iA",
+//     })
+// );
